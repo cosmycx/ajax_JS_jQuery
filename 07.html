@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src = 'jquery-2.1.4.js'></script>
+</head>
+<body>
+
+<script>
+	function sendAjax(){
+
+		$.ajax({
+
+			url: '07.php',
+			type: 'post',
+			data: 'name=C&favoriteFood=Pizza',
+			success: function(response){
+
+				$('#response').text(response);
+			}
+	
+		});
+	
+	}//
+
+</script>
+
+	<button onclick='sendAjax();'>Click for Ajax</button>
+	<h2 id='response'><h2>
+
+</body>
+</html>
+

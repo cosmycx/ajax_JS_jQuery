@@ -1,0 +1,21 @@
+<html>
+<body>
+
+<script>
+
+	var ajax = new XMLHttpRequest();
+	ajax.open('GET','01.php', true);
+
+	ajax.onreadystatechange = function(){
+		if (ajax.readyState ==4 && ajax.status ==200){
+			document.getElementById('response').textContent = ajax.responseText;
+		}
+	}
+	ajax.send();
+
+</script>
+
+<div id='response'></div>
+
+</body>
+</html>

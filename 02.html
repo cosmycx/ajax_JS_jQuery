@@ -1,0 +1,26 @@
+<html>
+<body>
+
+<script>
+
+	function sendRequest(){
+
+		var ajax = new XMLHttpRequest();
+		ajax.open('POST','02.php', true);
+		ajax.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+
+		ajax.onreadystatechange = function(){
+			if (ajax.readyState ==4 && ajax.status ==200){
+				document.getElementById('response').textContent = ajax.responseText;
+			}
+		}
+		ajax.send("name=John&lastName=D.");
+	}
+
+</script>
+
+<div id='response' ></div>
+<button onclick="sendRequest();">click me</button>
+
+</body>
+</html>

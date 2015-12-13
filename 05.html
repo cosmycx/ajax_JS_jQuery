@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src = 'jquery-2.1.4.js'></script>
+</head>
+<body>
+
+<script>
+	function sendAjax(){
+		$.get('05.php', function(data){
+
+		$('#response').text(data);
+
+		});
+	}
+
+
+</script>
+
+	<button onclick='sendAjax();'>Click for Ajax</button>
+	<h2 id='response'><h2>
+
+</body>
+</html>
+

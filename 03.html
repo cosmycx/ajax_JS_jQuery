@@ -1,0 +1,27 @@
+<html>
+<body>
+
+<script>
+
+function sendRequest(){
+
+	var ajax = new XMLHttpRequest();
+	ajax.open('POST','03.php', true);
+	ajax.setRequestHeader('content-type', 'application/json');
+	
+	ajax.onreadystatechange = function(){
+		if (ajax.readyState ==4 && ajax.status ==200){
+			var r = JSON.parse(ajax.response);
+			document.getElementById('response').textContent = 'Hello Mr. '+r.name+' '+r.lastName;
+		}
+	}
+	ajax.send(JSON.stringify({"name":"John","lastName":"D."}));
+}//--
+
+</script>
+
+<div id='response' ></div>
+<button onclick="sendRequest();">click me</button>
+
+</body>
+</html>
